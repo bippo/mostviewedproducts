@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Luxe corp.
+ * MostViewed module 
+ *
+ * @category   Luxe
+ * @package    Luxe_MostViewed
+ * @copyright  Copyright (c) 2008 Luxe Corp.
+ * @license    http://www.opensource.org/licenses/gpl-3.0.html GNU General Public License version 3
+ */
+-->
+<config>
+    <sections>
+        <mostviewed translate="label" module="mostviewed">
+            <label>MostViewed</label>
+            <tab>catalog</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>90</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <mostviewed translate="label">
+                    <label>MostViewed</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <num_displayed_products translate="label">
+                            <label>The number of displayed products</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </num_displayed_products>
+                        <time_limit_in_days translate="label">
+                            <label>Display for last(days)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </time_limit_in_days>
+                        <list_mode translate="label">
+                            <label>List Mode</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mostviewed/config_source_listMode</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </list_mode>
+                    </fields>
+                </mostviewed>
+            </groups>
+        </mostviewed>
+    </sections>
+</config>
