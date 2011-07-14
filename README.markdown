@@ -6,7 +6,7 @@ How to use:
 
 1. Make a static block.
 
-2. fill it's content with "{{block type="mostviewed/list" template="catalog/product/new_loaded.phtml"}}"
+2. fill it's content with "{{block type="mostviewed/list"}}"
 
 3. try it..
 
