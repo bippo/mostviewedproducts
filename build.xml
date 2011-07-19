@@ -10,6 +10,10 @@
 	<fail unless="extension.module.name"/>
 
 	<target name="remote.flush" description="Flush Magento cache storage on server.">
+		<fail unless="server.host"/>
+		<fail unless="server.port"/>
+		<fail unless="server.user"/>
+		<fail unless="server.dir"/>
 		<exec executable="ssh">
 			<arg value="-p"/>
 			<arg value="${server.port}"/>
@@ -81,7 +85,7 @@
 		<symlink link="${magento.dir}/skin/frontend/base/default/css/" resource="${basedir}/skin/frontend/base/default/css/${extension.dirname}.css" failonerror="false"/>
 		<symlink link="${magento.dir}/skin/frontend/base/default/images/" resource="${basedir}/skin/frontend/base/default/images/${extension.dirname}" failonerror="false"/>
 		<symlink link="${magento.dir}/skin/frontend/base/default/js/" resource="${basedir}/skin/frontend/base/default/js/${extension.dirname}" failonerror="false"/>
-		<copy file="Bippo_MostViewedProducts.xml" todir="${magento.dir}/app/etc/modules/" />
+		<copy file="${extension.module.company}_${extension.module.name}.xml" todir="${magento.dir}/app/etc/modules/" />
 	</target>
     
 	<target name="symlink.delete" description="Delete symlinks to ${theme.name} theme in ${magento.dir}. It will only delete files or symlinks, not directories.">
@@ -94,7 +98,7 @@
 		<symlink action="delete" link="${magento.dir}/skin/frontend/base/default/css/${extension.dirname}.css" failonerror="false"/>
 		<symlink action="delete" link="${magento.dir}/skin/frontend/base/default/images/${extension.dirname}" failonerror="false"/>
 		<symlink action="delete" link="${magento.dir}/skin/frontend/base/default/js/${extension.dirname}" failonerror="false"/>
-		<delete file="${magento.dir}/app/etc/modules/Bippo_MostViewedProducts.xml" />
+		<delete file="${magento.dir}/app/etc/modules/${extension.module.company}_${extension.module.name}.xml" />
 	</target>
 	
 </project>
