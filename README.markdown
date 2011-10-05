@@ -8,6 +8,10 @@ How to use:
 
 2. fill it's content with "{{block type="mostviewed/list"}}"
 
+in layout XML:
+
+	<block type="mostviewed/list" name="mostviewed" template="bippomostviewedproducts/grid.phtml"/>
+
 3. try it..
 
 4. If any crash, check system.log or exception.log so you can see what's wrong with your code.. then modify it.
