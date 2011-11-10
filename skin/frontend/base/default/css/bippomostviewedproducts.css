@@ -1,0 +1,11 @@
+.final-price-box {
+	color: #777777;
+	font-size: 13px;
+    font-weight: bold;
+	padding-bottom:3px;
+}
+
+.final-price-box .old-price{
+	color: #EE2C2C;
+	text-decoration: line-through;
+}

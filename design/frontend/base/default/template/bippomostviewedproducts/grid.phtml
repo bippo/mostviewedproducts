@@ -33,9 +33,36 @@
         <?php endif ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
                 <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135) ?>" width="135" height="135" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /></a>
-                <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h3>
+                <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
+                <?php 
+                $Product_title = $this->htmlEscape($_product->getName());
+                $length = strlen($Product_title);
+                if ($length <= 40):
+                echo $Product_title;
+                else:
+                echo substr($Product_title,0,40)."...";
+                endif;
+                ?>
+                </a></h3>
                 <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
-                <?php echo $this->getPriceHtml($_product, true, '-new') ?>
+                <?php #echo $this->getPriceHtml($_product, true, '-new') ?>
+                <?php 
+                $Base_Price = Mage::helper('core')->currency($_product->getPrice(),true,false);
+                $Final_Price = Mage::helper('core')->currency($_product->getFinalPrice(),true,false);
+                if ($Final_Price == $Base_Price):  ?>
+                <div class="final-price-box">
+                <?php echo $Final_Price ?>
+                </div>
+                <?php else:?>
+                 <div class="final-price-box">
+                 	<div class="old-price">
+                	<?php echo $Base_Price ?>
+                	</div>
+                	<div class="new-price">
+                	<?php echo $Final_Price ?>
+                	</div>
+                </div>
+                <?php endif; ?>
                 <div class="actions">
                     <?php if($_product->isSaleable()): ?>
                         <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
