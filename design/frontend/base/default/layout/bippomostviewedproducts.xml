@@ -5,6 +5,13 @@
 Default layout, loads most of the pages
 -->
 <default>
+ <label>All Pages</label>
+        <block type="page/html" name="root" output="toHtml" template="page/2columns-left.phtml">
+
+            <block type="page/html_head" name="head" as="head">
+                <action method="addCss"><stylesheet>css/bippomostviewedproduct.css</stylesheet></action>
+            </block>
+
 
 </default>
 
