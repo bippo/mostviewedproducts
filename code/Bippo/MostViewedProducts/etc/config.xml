@@ -34,6 +34,15 @@
             </mostviewed>
         </helpers>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <bippomostviewedproducts>
+                    <file>bippomostviewedproducts.xml</file>
+                </bippomostviewedproducts>
+            </updates>
+        </layout>
+    </frontend>
     <adminhtml>
         <acl>
             <resources>
