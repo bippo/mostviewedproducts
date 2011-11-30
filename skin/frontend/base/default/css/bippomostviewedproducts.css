@@ -41,4 +41,15 @@
 /*     width: 135px; */
 /* } */
 
-
+.add-to {
+	
+	background-image:url("../images/bippomostviewedproducts/add_cart.png")  ;
+	background-repeat:no-repeat;
+	height:40px;
+	width:40px;
+}
+.products-grid .actions {
+    width: 50px;
+    float:right;
+    margin-right:10px;
+}
