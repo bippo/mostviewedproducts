@@ -27,6 +27,7 @@
 <?php if (($_products = $this->getLoadedProductCollection()) && $_products->getSize()): ?>
 <div class="page-title"><h3 class="subtitle"><?php echo $this->__('Most Viewed') ?></h3></div>
 <?php $_columnCount = $this->getColumnCount(); ?>
+<?php $_columnCount = 3; ?>
     <?php $i=0; foreach ($_products->getItems() as $_product): ?>
         <?php if ($i++%$_columnCount==0): ?>
         <ul class="products-grid">
@@ -53,20 +54,20 @@
                 <div class="final-price-box">
                 <?php echo $Final_Price ?>
                 </div>
-                <?php else:?>
+                <//?php else:?>
                  <div class="final-price-box">
                  	<div class="old-price">
-                	<?php echo $Base_Price ?>
+                	<//?php echo $Base_Price ?>
                 	</div>
                 	<div class="new-price">
-                	<?php echo $Final_Price ?>
+                	<//?php echo $Final_Price ?>
                 	</div>
                 </div>
                 <?php endif; ?>
                 <div class="actions">
                     <?php if($_product->isSaleable()): ?>
  <a title="<?php echo $this->__('Add to Cart') ?>" href="<?php echo $this->getAddToCartUrl($_product) ?>"><div class="add-to"> <span><span><?php echo $this->__(' ') ?></span></span></div></a>
-  <!-- button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button -->                 
+  <!--button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button-->                 
                       
                     <?php else: ?>
                         <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
