@@ -33,15 +33,15 @@
         <ul class="products-grid">
         <?php endif ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
-                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200) ?>" width="235" height="235" style="padding:0px 10px 0px 0px;" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /></a>
-                <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
+                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200) ?>" width="250" height="297" style="padding-left: 25px;" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /></a>
+                <h2 class="product-name" style="padding-left: 25px;"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
                 <?php 
                 $Product_title = $this->htmlEscape($_product->getName());
                 $length = strlen($Product_title);
-                if ($length <= 40):
+                if ($length <= 50):
                 echo $Product_title;
                 else:
-                echo substr($Product_title,0,40)."...";
+                echo substr($Product_title,0,50)."...";
                 endif;
                 ?>
                 </a></h3>
@@ -66,9 +66,8 @@
                 <?php endif; ?>
                 <div class="actions">
                     <?php if($_product->isSaleable()): ?>
- <!--a title="<?php echo $this->__('Add to Cart') ?>" href="<?php echo $this->getAddToCartUrl($_product) ?>"><div class="add-to"> <span><span><?php echo $this->__(' ') ?></span></span></div></a-->
-  <!--button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button-->                 
-                      
+ 						<!--a title="<?php echo $this->__('Add to Cart') ?>" href="<?php echo $this->getAddToCartUrl($_product) ?>"><div class="add-to"> <span><span><?php echo $this->__(' ') ?></span></span></div></a-->
+  						<!--button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button-->                 
                     <?php else: ?>
                         <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                     <?php endif; ?>
