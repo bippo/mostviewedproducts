@@ -28,24 +28,24 @@
  */
 ?>
 <?php if (($_products = $this->getLoadedProductCollection()) && $_products->getSize()): ?>
-<div class="page-title"><h3 class="subtitle"><?php echo $this->__('Most Viewed') ?></h3></div>
+<div class="page-title"><h3 class="subtitle"><?php echo $this->__('Paling banyak dilihat') ?></h3></div>
 <?php $_columnCount = $this->getColumnCount(); ?>
 <?php $_columnCount = 3; ?>
     <?php $i=0; foreach ($_products->getItems() as $_product): ?>
-        <?php if ($i++%$_columnCount==0): ?>
-        <br/>
+        <?php if ($i++%$_columnCount==0): ?>    
         <ul class="products-grid">
         <?php endif ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
-                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200) ?>"  width="230" height="340" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /></a>
-                <h2 class="product-name" style="padding-left:0px;"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
+              	<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image">
+              	<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200) ?>"  width="215" height="300" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /></a>
+                <h2 class="product-name" style="margin-left:2px;"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
                 <?php 
                 $Product_title = $this->htmlEscape($_product->getName());
                 $length = strlen($Product_title);
-                if ($length <= 40):
+                if ($length <= 30):
                 echo $Product_title;
                 else:
-                echo substr($Product_title,0,40)."...";
+                echo substr($Product_title,0,30)."...";
                 endif;
                 ?>
                 </a></h3>
