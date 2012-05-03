@@ -50,7 +50,7 @@
                 ?>
                 </a></h3>
                 <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
-                <?php #echo $this->getPriceHtml($_product, true, '-new') ?>
+                <?php echo $this->getPriceHtml($_product, true, '-new') ?>
                 <?php 
                 $Base_Price = Mage::helper('core')->currency($_product->getPrice(),true,false);
                 $Final_Price = Mage::helper('core')->currency($_product->getFinalPrice(),true,false);
