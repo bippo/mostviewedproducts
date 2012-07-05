@@ -33,7 +33,7 @@
         <ul class="products-grid">
         <?php endif ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
-                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200) ?>" width="154" height="224" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /></a>
+                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(155, 225) ?>" width="155" height="225" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" /></a>
                 <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
                 <?php 
                 $Product_title = $this->htmlEscape($_product->getName());
@@ -52,15 +52,15 @@
                 $Final_Price = Mage::helper('core')->currency($_product->getFinalPrice(),true,false);
                 if ($Final_Price == $Base_Price):  ?>
                 <div class="final-price-box">
-                <?php echo $Final_Price ?>
+                <?//php echo $Final_Price ?>
                 </div>
-                <//?php else:?>
+                <?php else:?>
                  <div class="final-price-box">
                  	<div class="old-price">
-                	<//?php echo $Base_Price ?>
+                	<?//php echo $Base_Price ?>
                 	</div>
                 	<div class="new-price">
-                	<//?php echo $Final_Price ?>
+                	<?//php echo $Final_Price ?>
                 	</div>
                 </div>
                 <?php endif; ?>
